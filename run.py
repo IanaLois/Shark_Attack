@@ -43,7 +43,8 @@ def game_menu():
             game_rules()
             break
         elif choose_option == "2":
-            print("Generating random word, Choose Difficulty")
+            new_word()
+            select_difficulty()
         elif choose_option == "3":
             exit_terminal = True
             exit()
@@ -80,5 +81,47 @@ def game_rules():
             game_menu()
         else:
             print(f"\nOops! {back_to_home} is invalid.")
+
+def select_difficulty():
+    """
+    Displays various game difficulty modes that the user can attempt to beat.
+    Game will begin once a choice has been made.
+    Validates whether the user's input is 'E', 'M' or 'C'.
+    """
+    choose_art = """
+   _________   ___ ___  ________   ________    ___________________
+   \_   ___ \ /   |   \ \_____  \  \_____  \  /   _____|_   _____/
+   /    \  \//    ~    \/   |   \  /   |   \ \_____  \ |    __)_ 
+   \     \___\    Y    /    |    \/    |    \/        \|        \ 
+    \______  /\___|_  /\_______  /\_______  /_______  /_______  /
+           \/       \/         \/         \/        \/        \/ 
+    """
+    print(choose_art)
+    print("Enter 'E' for Easy - 8 Lives")
+    print("Enter 'M' for Moderate - 6 Lives")
+    print("Enter 'C' for Challenging - 4 Lives\n")
+    lives = 0
+    begin_game = False
+    while not begin_game:
+        level_select = input("Please choose game difficulty: ").upper()
+        if level_select == "E":
+            lives = 8
+            begin_game = True
+            print("\nGame difficulty set to 'Easy'. Knock 'em dead!\n")
+            break
+        elif level_select == "M":
+            lives = 6
+            begin_game = True
+            print("\nGame difficulty set to 'Moderate'. All the best!\n")
+            break
+        elif level_select == "C":
+            lives = 4
+            begin_game = True
+            print("\nGame difficulty set to 'Challenging'. Use them wisely!\n")
+            break
+        else:
+            print(f"\nOops! {level_select} is invalid.")
+            print("\nInput needs to be 'E', 'M' or 'C'.\n")
+    return lives
 
 game_menu()
