@@ -124,4 +124,43 @@ def select_difficulty():
             print("\nInput needs to be 'E', 'M' or 'C'.\n")
     return lives
 
+phases = [
+"""
+                    o  What's that in the water?
+~~~~~~~~~~~~~~~~~~~/|\~~
+""",
+"""
+   |\              \o/ SHARK!
+~~ | \ ~~~~~~~~~~~~ | ~~
+""",
+"""
+     |\            \o/ HELP!
+~~~~ | \ ~~~~~~~~~~ | ~~
+""",
+"""
+       |\          \o/ SOMEONE PLEASE!
+~~~~~~ | \ ~~~~~~~~ | ~~
+""",
+"""
+         |\        \o/ SOS!
+~~~~~~~~ | \ ~~~~~~ | ~~
+""",
+"""
+           |\      \o/ SAVE ME!
+~~~~~~~~~~ | \ ~~~~ | ~~
+""",
+"""
+             |\    \o/ OH NO!
+~~~~~~~~~~~~ | \ ~~ | ~~
+""",
+"""
+               |\   o  Goodbye cruel world...
+~~~~~~~~~~~~~~ | \ /|\~~
+""",
+"""
+                 |\  Mmm, delicious!
+~~~~~~~~~~~~~~~~ | \ ~~\n
+"""
+]
+
 game_menu()
