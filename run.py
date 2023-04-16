@@ -233,7 +233,17 @@ def new_game(random_word, lives):
                 game_over = True
                 print("Letters used:", " ".join(letter_used))
                 print(shark_phases(lives))
-                print("YOU WIN!")
+                win_message = """
+                   \o/ YOU SAVED ME! THANK YOU!
+~~~~~~~~~~~~~~~~~~~ | ~~\n
+        _____ ___ ________   ____ ___   __      __ ___ _______     _ 
+        \__  |   |\_____  \ |    |   \ /  \    /  \   |\      \   | |
+         /   |   | /   |   \|    |   / \   \/\/   /   |/   |   \  | |
+         \____   |/    |    \    |  /   \        /|   /    |    \  \|
+         / ______|\_______  /______/     \__/\  / |___\____|__  /  __
+         \/               \/                  \/              \/   \/
+                """
+                print(win_message)
                 print("\nAmazing work! You're a lifesaver :)\n")
                 print("Continue to End Menu")
         else:
@@ -246,7 +256,21 @@ def new_game(random_word, lives):
             print(hidden_word)
     if lives == 0:
         game_over = True
-        print("GAME OVER")
+        lose_message = """
+           ________    _____      _____  ___________
+          /  _____/   /  _  \    /     \ \_   _____/
+         /   \  ___  /  /_\  \  /  \ /  \ |    __)_ 
+         \    \_\  \/    |    \/    Y    \|        \ 
+          \______  /\____|__  /\____|__  /_______  /
+                 \/         \/         \/        \/ 
+          ____________   _________________________   
+          \_____  \   \ /   /\_   _____/\______   \  
+           /   |   \   Y   /  |    __)_  |       _/  
+          /    |    \     /   |        \ |    |   \  
+          \_______  /\___/   /_______  / |____|_  /  
+                  \/                 \/         \/ 
+        """
+        print(lose_message)
         print("\nBetter luck next time :(")
         print(f"\nThe hidden word was {random_word}\n")
         print("Continue to End Menu")
