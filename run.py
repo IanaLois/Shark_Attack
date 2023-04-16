@@ -124,6 +124,90 @@ def select_difficulty():
             print("\nInput needs to be 'E', 'M' or 'C'.\n")
     return lives
 
+def new_game(random_word, lives):
+    """
+    Displays the number of lives left and the shark phases graphic.
+    Both of which are in accordance with the game's difficulty,
+    the letters previously used and the hidden word.
+    
+    The correct letter will be added to the list of letters used.
+    It will gradually reveal the hidden word until it is complete.
+    
+    The incorrectly guessed letter will be added to the list of letters used.
+    The user will lose a life until the game is over or the game is won.
+    
+    Validates that the user's entry is a letter,
+    does not include more than one letter, 
+    has not previously been used and is contained in the hidden word.
+    """
+    hidden_word = "_" * len(random_word)
+    game_over = False
+    letter_used = []
+    print(f"Lives remaining: {lives}")
+    print("Letters used:", " ".join(letter_used))
+    print(shark_phases(lives))
+    print(hidden_word)
+    while not game_over and lives > 0:
+        guess = input("\nEnter any letter: ").upper()
+        if not guess.isalpha():
+            print(f"\nOops! {guess} is not a letter.")
+            print("\nPlease enter a letter.")
+            print(f"\nLives remaining: {lives}")
+            print("Letters used:", " ".join(letter_used))
+            print(shark_phases(lives))
+            print(hidden_word)
+            continue
+        elif len(guess) != 1:
+            print(f"\nOops! {guess} contains more than one letter.")
+            print("\nPlease enter one letter at a time.")
+            print(f"\nLives remaining: {lives}")
+            print("Letters used:", " ".join(letter_used))
+            print(shark_phases(lives))
+            print(hidden_word)
+            continue
+        elif guess in letter_used:
+            print(f"\nOops! {guess} has been used!")
+            print("\nPlease enter a new letter.")
+            print(f"\nLives remaining: {lives}")
+            print("Letters used:", " ".join(letter_used))
+            print(shark_phases(lives))
+            print(hidden_word)
+            continue
+        elif guess in random_word:
+            letter_used.append(guess)
+            print(f"\nOutstanding work! {guess} is in the hidden word")
+            hidden_word = ""
+            for i in range(len(random_word)):
+                if random_word[i] in letter_used:
+                    hidden_word += random_word[i]
+                else:
+                    hidden_word += "_"
+            print(f"\nLives remaining: {lives}")
+            print("Letters used:", " ".join(letter_used))
+            print(shark_phases(lives))
+            print(hidden_word)
+            if hidden_word == random_word:
+                game_over = True
+                print("Letters used:", " ".join(letter_used))
+                print(shark_phases(lives))
+                print("YOU WIN!")
+                print("\nAmazing work! You're a lifesaver :)\n")
+                print("Continue to End Menu")
+        else:
+            letter_used.append(guess)
+            lives -= 1
+            print(f"\nOops! {guess} is not in the hidden word.")
+            print(f"\nLives remaining: {lives}")
+            print("Letters used:", " ".join(letter_used))
+            print(shark_phases(lives))
+            print(hidden_word)
+    if lives == 0:
+        game_over = True
+        print("GAME OVER")
+        print("\nBetter luck next time :(")
+        print(f"\nThe hidden word was {random_word}\n")
+        print("Continue to End Menu")
+
 def shark_phases(lives):
     phases = [
 """
