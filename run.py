@@ -17,7 +17,7 @@ def game_menu():
     Option '3' will exit the game entirely.
     Validates whether the user's input is '1', '2' or '3'.
     """
-    game_logo = """\u001b[34m
+    game_logo = """\u001b[34;1m
            _________ ___ ___    _____ __________ ____  __       
           /   _____//   |   \  /  _  \ \______  \    |/ _|        
           \_____  \/    ~    \/  /_\  \|       _/      <          
