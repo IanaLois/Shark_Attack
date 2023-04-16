@@ -13,7 +13,7 @@ def new_word():
 
 def game_menu():
     """
-    Displays the start menu of the game. 
+    Displays the start menu of the game.
     The user is given three options to choose from.
     Option '1' will redirect to the rules page.
     Option '2' will redirect to game difficulty selection.
@@ -149,21 +149,9 @@ def new_game(random_word, lives):
     Displays the number of lives left and the shark phases graphic.
     Both of which are in accordance with the game's difficulty,
     the letters previously used and the hidden word.
-    
-    The correct letter will be added to the list of letters used.
-    It will gradually reveal the hidden word until it is complete.
-    
-    The incorrectly guessed letter will be added to the list of letters used.
-    The user will lose a life until the game is over or the game is won.
-    
     Validates that the user's entry is a letter,
-    does not include more than one letter, 
+    does not include more than one letter,
     has not previously been used and is contained in the hidden word.
-    
-    Displays the 'YOU WIN!' graphic when the user wins 
-    and the 'GAME OVER' graphic when the user loses.
-    The user is then given the option to play the game again or 
-    return to the start menu.
     """
     hidden_word = "_" * len(random_word)
     game_over = False
@@ -199,6 +187,8 @@ def new_game(random_word, lives):
             print(hidden_word)
             continue
         elif guess in random_word:
+            # The correct letter will be added to the list of letters used.
+            # It will gradually reveal the hidden word until it is complete.
             letter_used.append(guess)
             print(f"\nOutstanding work! {guess} is in the hidden word")
             hidden_word = ""
@@ -219,6 +209,8 @@ def new_game(random_word, lives):
                 print("\nAmazing work! You're a lifesaver :)\n")
                 end_menu()
         else:
+            # The incorrect guess  will be added to the list of letters used.
+            # The user will lose a life.
             letter_used.append(guess)
             lives -= 1
             print(f"\nOops! {guess} is not in the hidden word.")
