@@ -2,12 +2,14 @@ import random
 from words import word_list, game_logo, rules
 from words import choose_art, win_message, lose_message
 
+
 def new_word():
     """
     Retrieves a new randomised word from the imported word list
     """
     random_word = random.choice(word_list)
     return random_word.upper()
+
 
 def game_menu():
     """
@@ -37,6 +39,7 @@ def game_menu():
         else:
             print(f"\nOops! {choose_option} is invalid.\n")
 
+
 def game_rules():
     """
     Displays the rules of the game, which is listed using dashed lines.
@@ -59,6 +62,7 @@ def game_rules():
             game_menu()
         else:
             print(f"\nOops! {back_to_home} is invalid.")
+
 
 def select_difficulty():
     """
@@ -93,6 +97,7 @@ def select_difficulty():
             print(f"\nOops! {level_select} is invalid.")
             print("\nInput needs to be 'E', 'M' or 'C'.\n")
     return lives
+
 
 def shark_phases(lives):
     """
@@ -137,6 +142,7 @@ def shark_phases(lives):
 """
     ]
     return phases[8-lives]
+
 
 def new_game(random_word, lives):
     """
@@ -227,6 +233,7 @@ def new_game(random_word, lives):
         print(f"\nThe hidden word was {random_word}\n")
         end_menu()
 
+
 def end_menu():
     """
     The final option at the end of the game.
@@ -245,5 +252,6 @@ def end_menu():
             game_menu()
         else:
             print(f"\nOops! {play_again} is invalid.\n")
+
 
 game_menu()
