@@ -124,8 +124,8 @@ def select_difficulty():
             print("\nInput needs to be 'E', 'M' or 'C'.\n")
     return lives
 
-
-phases = [
+def shark_phases(lives):
+    phases = [
 """
                     o  What's that in the water?
 ~~~~~~~~~~~~~~~~~~~/|\~~
@@ -162,6 +162,6 @@ phases = [
                  |\  Mmm, delicious!
 ~~~~~~~~~~~~~~~~ | \ ~~\n
 """
-]
+    ]
 
 game_menu()
