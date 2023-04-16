@@ -124,6 +124,46 @@ def select_difficulty():
             print("\nInput needs to be 'E', 'M' or 'C'.\n")
     return lives
 
+def shark_phases(lives):
+    phases = [
+"""
+                    o  What's that in the water?
+~~~~~~~~~~~~~~~~~~~/|\~~
+""",
+"""
+   |\              \o/ SHARK!
+~~ | \ ~~~~~~~~~~~~ | ~~
+""",
+"""
+     |\            \o/ HELP!
+~~~~ | \ ~~~~~~~~~~ | ~~
+""",
+"""
+       |\          \o/ SOMEONE PLEASE!
+~~~~~~ | \ ~~~~~~~~ | ~~
+""",
+"""
+         |\        \o/ SOS!
+~~~~~~~~ | \ ~~~~~~ | ~~
+""",
+"""
+           |\      \o/ SAVE ME!
+~~~~~~~~~~ | \ ~~~~ | ~~
+""",
+"""
+             |\    \o/ OH NO!
+~~~~~~~~~~~~ | \ ~~ | ~~
+""",
+"""
+               |\   o  Goodbye cruel world...
+~~~~~~~~~~~~~~ | \ /|\~~
+""",
+"""
+                 |\  Mmm, delicious!
+~~~~~~~~~~~~~~~~ | \ ~~\n
+"""
+    ]
+
 def new_game(random_word, lives):
     """
     Displays the number of lives left and the shark phases graphic.
@@ -207,45 +247,5 @@ def new_game(random_word, lives):
         print("\nBetter luck next time :(")
         print(f"\nThe hidden word was {random_word}\n")
         print("Continue to End Menu")
-
-def shark_phases(lives):
-    phases = [
-"""
-                    o  What's that in the water?
-~~~~~~~~~~~~~~~~~~~/|\~~
-""",
-"""
-   |\              \o/ SHARK!
-~~ | \ ~~~~~~~~~~~~ | ~~
-""",
-"""
-     |\            \o/ HELP!
-~~~~ | \ ~~~~~~~~~~ | ~~
-""",
-"""
-       |\          \o/ SOMEONE PLEASE!
-~~~~~~ | \ ~~~~~~~~ | ~~
-""",
-"""
-         |\        \o/ SOS!
-~~~~~~~~ | \ ~~~~~~ | ~~
-""",
-"""
-           |\      \o/ SAVE ME!
-~~~~~~~~~~ | \ ~~~~ | ~~
-""",
-"""
-             |\    \o/ OH NO!
-~~~~~~~~~~~~ | \ ~~ | ~~
-""",
-"""
-               |\   o  Goodbye cruel world...
-~~~~~~~~~~~~~~ | \ /|\~~
-""",
-"""
-                 |\  Mmm, delicious!
-~~~~~~~~~~~~~~~~ | \ ~~\n
-"""
-    ]
 
 game_menu()
