@@ -43,8 +43,7 @@ def game_menu():
             game_rules()
             break
         elif choose_option == "2":
-            new_word()
-            select_difficulty()
+            new_game(new_word(), select_difficulty())
         elif choose_option == "3":
             exit_terminal = True
             exit()
@@ -125,6 +124,9 @@ def select_difficulty():
     return lives
 
 def shark_phases(lives):
+    """
+    Returns the appropriate graphic for the number of lives left.
+    """
     phases = [
 """
                     o  What's that in the water?
@@ -163,6 +165,7 @@ def shark_phases(lives):
 ~~~~~~~~~~~~~~~~ | \ ~~\n
 """
     ]
+    return phases[8-lives]
 
 def new_game(random_word, lives):
     """
