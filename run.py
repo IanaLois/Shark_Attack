@@ -153,6 +153,9 @@ def new_game(random_word, lives):
     Validates that the user's entry is a letter,
     does not include more than one letter, 
     has not previously been used and is contained in the hidden word.
+    
+    Displays the 'YOU WIN!' graphic when the user wins 
+    and the 'GAME OVER' graphic when the user loses.
     """
     hidden_word = "_" * len(random_word)
     game_over = False
