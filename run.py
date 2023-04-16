@@ -156,6 +156,8 @@ def new_game(random_word, lives):
     
     Displays the 'YOU WIN!' graphic when the user wins 
     and the 'GAME OVER' graphic when the user loses.
+    The user is then given the option to play the game again or 
+    return to the start menu.
     """
     hidden_word = "_" * len(random_word)
     game_over = False
@@ -226,6 +228,12 @@ def new_game(random_word, lives):
         end_menu()
 
 def end_menu():
+    """
+    The final option at the end of the game.
+    'Y' (Yes) will redirect the user to the difficulty selection page.
+    'N' (No) will redirect the user to the start menu of the game.
+    Validates whether the user's input is a 'Y' or a 'N'.
+    """
     restart = False
     while not restart:
         play_again = input("Play again? Enter 'Y' (Yes) or 'N' (No): ").upper()
