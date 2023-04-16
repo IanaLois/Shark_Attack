@@ -30,7 +30,7 @@ def game_menu():
      /    |    \    |     |    |/    |    \     \___|    |  \ 
      \____|__  /____|     |____|\____|__  /\______  /____|__ \ 
              \/                         \/        \/        \/
-             """
+    """
     print(game_logo)
     print("Welcome! Are you ready to play?\n")
     print("Enter '1' to see game rules.")
@@ -40,7 +40,7 @@ def game_menu():
     while not exit_terminal:
         choose_option = input("Please enter '1', '2' or '3': ")
         if choose_option == "1":
-            print("Rules Page")
+            game_rules()
             break
         elif choose_option == "2":
             print("Generating random word, Choose Difficulty")
@@ -49,5 +49,36 @@ def game_menu():
             exit()
         else:
             print(f"\nOops! {choose_option} is invalid.\n")
+
+def game_rules():
+    """
+    Displays the rules of the game, which is listed using dashed lines.
+    'Enter' key will redirect the user back to the start menu.
+    Validates whether the user's input is the 'Enter' key.
+    """
+    rules = """
+         __________ ____ ___ ____     ___________ _________
+         \______   \    |   \    |    \_   _____//   _____/
+          |       _/    |   /    |     |    __)_ \_____  \ 
+          |    |   \    |  /|    |___  |        \/        \ 
+          |____|_  /______/ |_______ \/_______  /_______  /
+                 \/                 \/        \/        \/ 
+    """
+    print(rules)
+    print("- A shark has appeared! Help the person before it attacks!")
+    print("- You must solve the hidden word in order to save them.")
+    print("- Each difficulty will give a different number of lives.")
+    print("- Make a guess by typing any letter.")
+    print("- Guesses that have already been used will be displayed.")
+    print("- Each incorrect guess will bring the shark closer!")
+    print("- Best of luck! They need your help now more than ever.\n")
+    home_page = False
+    while not home_page:
+        back_to_home = input("\nPress 'Enter' key to return: ")
+        if back_to_home == "":
+            home_page = True
+            game_menu()
+        else:
+            print(f"\nOops! {back_to_home} is invalid.")
 
 game_menu()
