@@ -1,5 +1,6 @@
 import random
-from words import word_list
+from words import word_list, game_logo, rules
+from words import choose_art, win_message, lose_message
 
 def new_word():
     """
@@ -16,20 +17,6 @@ def game_menu():
     Option '2' will redirect to game difficulty selection.
     Option '3' will exit the game entirely.
     Validates whether the user's input is '1', '2' or '3'.
-    """
-    game_logo = """\u001b[34;1m
-           _________ ___ ___    _____ __________ ____  __       
-          /   _____//   |   \  /  _  \ \______  \    |/ _|        
-          \_____  \/    ~    \/  /_\  \|       _/      <          
-          /        \    Y    /    |    \    |   \    |  \         
-         /_______  /\___|_  /\____|__  /____|_  /____|__ \        
-                 \/       \/         \/       \/        \/        
-        ________________________________  _________  ____  __
-       /  _  \__    ___/\__    ___/  _  \ \_   ___ \|    |/ _|
-      /  /_\  \|    |     |    | /  /_\  \/    \  \/|      <  
-     /    |    \    |     |    |/    |    \     \___|    |  \ 
-     \____|__  /____|     |____|\____|__  /\______  /____|__ \ 
-             \/                         \/        \/        \/
     """
     print(game_logo)
     print("Welcome! Are you ready to play?\n")
@@ -56,14 +43,6 @@ def game_rules():
     'Enter' key will redirect the user back to the start menu.
     Validates whether the user's input is the 'Enter' key.
     """
-    rules = """
-         __________ ____ ___ ____     ___________ _________
-         \______   \    |   \    |    \_   _____//   _____/
-          |       _/    |   /    |     |    __)_ \_____  \ 
-          |    |   \    |  /|    |___  |        \/        \ 
-          |____|_  /______/ |_______ \/_______  /_______  /
-                 \/                 \/        \/        \/ 
-    """
     print(rules)
     print("- A shark has appeared! Help the person before it attacks!")
     print("- You must solve the hidden word in order to save them.")
@@ -86,14 +65,6 @@ def select_difficulty():
     Displays various game difficulty modes that the user can attempt to beat.
     Game will begin once a choice has been made.
     Validates whether the user's input is 'E', 'M' or 'C'.
-    """
-    choose_art = """
-   _________   ___ ___  ________   ________    ___________________
-   \_   ___ \ /   |   \ \_____  \  \_____  \  /   _____|_   _____/
-   /    \  \//    ~    \/   |   \  /   |   \ \_____  \ |    __)_ 
-   \     \___\    Y    /    |    \/    |    \/        \|        \ 
-    \______  /\___|_  /\_______  /\_______  /_______  /_______  /
-           \/       \/         \/         \/        \/        \/ 
     """
     print(choose_art)
     print("Enter 'E' for Easy - 8 Lives")
@@ -233,16 +204,6 @@ def new_game(random_word, lives):
                 game_over = True
                 print("Letters used:", " ".join(letter_used))
                 print(shark_phases(lives))
-                win_message = """
-                   \o/ YOU SAVED ME! THANK YOU!
-~~~~~~~~~~~~~~~~~~~ | ~~\n
-        _____ ___ ________   ____ ___   __      __ ___ _______     _ 
-        \__  |   |\_____  \ |    |   \ /  \    /  \   |\      \   | |
-         /   |   | /   |   \|    |   / \   \/\/   /   |/   |   \  | |
-         \____   |/    |    \    |  /   \        /|   /    |    \  \|
-         / ______|\_______  /______/     \__/\  / |___\____|__  /  __
-         \/               \/                  \/              \/   \/
-                """
                 print(win_message)
                 print("\nAmazing work! You're a lifesaver :)\n")
                 print("Continue to End Menu")
@@ -256,20 +217,6 @@ def new_game(random_word, lives):
             print(hidden_word)
     if lives == 0:
         game_over = True
-        lose_message = """
-           ________    _____      _____  ___________
-          /  _____/   /  _  \    /     \ \_   _____/
-         /   \  ___  /  /_\  \  /  \ /  \ |    __)_ 
-         \    \_\  \/    |    \/    Y    \|        \ 
-          \______  /\____|__  /\____|__  /_______  /
-                 \/         \/         \/        \/ 
-          ____________   _________________________   
-          \_____  \   \ /   /\_   _____/\______   \  
-           /   |   \   Y   /  |    __)_  |       _/  
-          /    |    \     /   |        \ |    |   \  
-          \_______  /\___/   /_______  / |____|_  /  
-                  \/                 \/         \/ 
-        """
         print(lose_message)
         print("\nBetter luck next time :(")
         print(f"\nThe hidden word was {random_word}\n")
