@@ -17,7 +17,7 @@ def game_menu():
     Option '3' will exit the game entirely.
     Validates whether the user's input is '1', '2' or '3'.
     """
-    game_logo = """\u001b[34;1m
+    game_logo = """\u001b[34m
            _________ ___ ___    _____ __________ ____  __       
           /   _____//   |   \  /  _  \ \______  \    |/ _|        
           \_____  \/    ~    \/  /_\  \|       _/      <          
@@ -123,6 +123,7 @@ def select_difficulty():
             print(f"\nOops! {level_select} is invalid.")
             print("\nInput needs to be 'E', 'M' or 'C'.\n")
     return lives
+
 
 phases = [
 """
