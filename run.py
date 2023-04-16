@@ -209,7 +209,7 @@ def new_game(random_word, lives):
                 print(shark_phases(lives))
                 print(win_message)
                 print("\nAmazing work! You're a lifesaver :)\n")
-                print("Continue to End Menu")
+                end_menu()
         else:
             letter_used.append(guess)
             lives -= 1
@@ -223,6 +223,19 @@ def new_game(random_word, lives):
         print(lose_message)
         print("\nBetter luck next time :(")
         print(f"\nThe hidden word was {random_word}\n")
-        print("Continue to End Menu")
+        end_menu()
+
+def end_menu():
+    restart = False
+    while not restart:
+        play_again = input("Play again? Enter 'Y' (Yes) or 'N' (No): ").upper()
+        if play_again == "Y":
+            restart = True
+            new_game(new_word(), select_difficulty())
+        elif play_again == "N":
+            restart = True
+            game_menu()
+        else:
+            print(f"\nOops! {play_again} is invalid.\n")
 
 game_menu()
