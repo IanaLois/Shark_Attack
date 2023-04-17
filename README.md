@@ -191,6 +191,8 @@ Mentor advice that was used:
     - You have manual control over when the app is deployed, but you must remember to do it.
 12. After the app is completed, Heroku will have a link to the live web page.
 
+Click [here](https://shark-attack.herokuapp.com/) to access the game's final deployment.
+
 ## **Credits**
 
 - My mentor Richard for the guidance and encouragement.
