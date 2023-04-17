@@ -206,7 +206,7 @@ def new_game(random_word, lives):
                 print("Letters used:", " ".join(letter_used))
                 print(shark_phases(lives))
                 print(win_message)
-                print("\nAmazing work! You're a lifesaver :)\n")
+                print("\nIncredible! You're a lifesaver :)\n")
                 end_menu()
         else:
             # The incorrect guess  will be added to the list of letters used.
